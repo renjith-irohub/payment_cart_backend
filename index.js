@@ -5,9 +5,10 @@ require('./config/db')
 const router=require('./router/paymentrouter')
 const cors=require('cors')
 app.use(cors())
-app.use(express.json())
+
 
 app.use('/webhook', express.raw({ type: 'application/json' }));
+app.use(express.json())
 app.use(router)
 
 
