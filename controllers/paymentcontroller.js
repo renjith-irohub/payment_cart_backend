@@ -23,8 +23,8 @@ exports.createcheckout = async (req, res) => {
             line_items,
             mode: 'payment',
             client_reference_id: payment._id.toString(), // store Payment ID
-            success_url: 'http://localhost:5173/success',
-            cancel_url: 'http://localhost:5173/failed'
+            success_url: 'https://paymentcart.vercel.app/success',
+            cancel_url: 'https://paymentcart.vercel.app/failed'
         });
 
         res.json({ url: session.url });
