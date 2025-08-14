@@ -7,7 +7,7 @@ const cors=require('cors')
 app.use(cors())
 
 
-app.use('/webhook', express.raw({ type: 'application/json' }));
+app.post('/webhook', express.raw({ type: 'application/json' }), require('./controllers/webhookcontroller').handleWebhook);
 app.use(express.json())
 app.use(router)
 
